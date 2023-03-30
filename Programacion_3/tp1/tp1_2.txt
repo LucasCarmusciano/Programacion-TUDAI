@@ -1,0 +1,13 @@
+Considerando la implementación de la Lista realizado en el ejercicio anterior, comparar la complejidad computacional contra un array en las siguientes operaciones:
+1.- Insertar al principio.
+2.- Buscar un elemento en una posición.
+3.- Determinar la cantidad de elementos
+
+1.  En el caso de una lista, solo se necesita de un metodo, lo cual lo vuelve de tipo O(1).
+    En el caso de un array, en el peor de los casos de debera desplazar n elementos, por lo que es O(n)
+2.  En el array se necesita de un par de operaciones, pero siempre se tratara de la misma cantidad independientemente de la posicion a buscar
+por lo que es un O(1)
+    En la lista se debe recorrer n elementos para buscar la posicion n por lo uqe es O(n);
+3.  En caso de un array es un O(1)
+    En caso de una lista, si se implementa un atributo "size" el cual vaya incrementando al agregar elementos es O(1). 
+Pero en caso de no implementarse, debe recorrer los n elementos, sera de tipo O(n).
