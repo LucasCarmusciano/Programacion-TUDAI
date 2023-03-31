@@ -66,24 +66,4 @@ public class MySimpleLinkedList<T> implements Iterable<T>{
 	public Iterator<T> iterator() {
         return new Iterador<T>(this.first);
     }
-
-    private class Iterador<T> implements Iterator<T>{
-        private Node<T> pos;
-        
-        public Iterador(Node<T> first){
-            this.pos = first;
-        }
-
-        @Override
-        public boolean hasNext() {
-            return (pos!=null);
-        }
-
-        @Override
-        public T next() {
-			T obj = pos.getInfo();
-            pos = pos.getNext();
-            return obj;
-        }
-	}
 }
