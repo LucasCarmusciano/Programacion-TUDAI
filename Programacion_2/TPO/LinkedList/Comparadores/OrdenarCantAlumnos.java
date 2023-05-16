@@ -1,8 +1,8 @@
-package ListaVinculada.Comparadores;
+package TPO.LinkedList.Comparadores;
 
 import java.util.Comparator;
 
-import ListaVinculada.Entidad;
+import TPO.LinkedList.ListaVinculada.*;
 
 public class OrdenarCantAlumnos implements Comparator<Object>{
  

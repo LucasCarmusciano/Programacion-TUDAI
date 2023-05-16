@@ -1,8 +1,8 @@
-package ListaVinculada;
+package TPO.LinkedList.ListaVinculada;
 
 import java.util.Comparator;
 
-import ListaVinculada.Comparadores.*;
+import TPO.LinkedList.Comparadores.*;
 
 public class test {
     public static void main(String[] args) {

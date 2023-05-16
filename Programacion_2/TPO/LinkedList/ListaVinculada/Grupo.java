@@ -1,4 +1,4 @@
-package ListaVinculada;
+package TPO.LinkedList.ListaVinculada;
 
 import java.util.ArrayList;
 

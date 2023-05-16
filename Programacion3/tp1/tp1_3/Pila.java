@@ -15,7 +15,7 @@ public class Pila<T> {
         return this.lista.get(0);
     }
     public void reverse(){
-        MySimpleLinkedList<T> aux = new MySimpleLinkedList();
+        MySimpleLinkedList<T> aux = new MySimpleLinkedList<T>();
         for (int i = 0; i < this.lista.size(); i++) {
             aux.insertFront(this.lista.get(i));
         }

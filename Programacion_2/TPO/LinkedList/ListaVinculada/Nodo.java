@@ -1,4 +1,4 @@
-package ListaVinculada;
+package TPO.LinkedList.ListaVinculada;
 
 
 public class Nodo {

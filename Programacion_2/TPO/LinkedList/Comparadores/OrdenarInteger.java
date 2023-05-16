@@ -1,4 +1,4 @@
-package ListaVinculada.Comparadores;
+package TPO.LinkedList.Comparadores;
 
 import java.util.Comparator;
 
