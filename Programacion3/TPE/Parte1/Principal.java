@@ -64,7 +64,19 @@ public class Principal {
         ServicioBFS bfs = new ServicioBFS(grafo);
 
         // System.out.println(dfs.dfsForest().toString());
-        ServicioCaminos serviciocaminos = new ServicioCaminos(grafo, 2, 5, 5);
-        System.out.println(serviciocaminos.caminos().toString());
+
+        ServicioCaminos servicioCaminos = new ServicioCaminos(grafo, 2, 5, 2148);
+        System.out.println(servicioCaminos.caminos().toString());
+
+        grafo.borrarVertice(5);
+        // Iterator<Integer> vertices = grafo.obtenerVertices();
+        // Iterator<Arco<Integer>> arcos = grafo.obtenerArcos();
+
+        // while(arcos.hasNext()){
+            // System.out.println(arcos.next());
+        // }
+        // while(vertices.hasNext()){
+        //     System.out.println(vertices.next());
+        // }
     }
 }

@@ -1,4 +1,4 @@
-package Parte1;
+package Programacion3.tp4.tp4_1;
 
 public class Arco<T> {
     private int verticeOrigen, verticeDestino;

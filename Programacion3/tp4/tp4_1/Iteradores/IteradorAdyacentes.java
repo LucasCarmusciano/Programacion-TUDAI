@@ -1,16 +1,16 @@
-package Parte1.Iteradores;
+package Programacion3.tp4.tp4_1.Iteradores;
 
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
-import Parte1.Arco;
+import Programacion3.tp4.tp4_1.*;
 
 public class IteradorAdyacentes<T> implements Iterator<Integer>{
 
     private Iterator<Arco<T>> iterador;
 
-    public IteradorAdyacentes(HashMap<Integer,List<Arco<T>>> vertices, int v){
+    public IteradorAdyacentes(HashMap<Integer, List<Programacion3.tp4.tp4_1.Arco<T>>> vertices, int v){
         this.iterador=vertices.get(v).iterator();
     }
 

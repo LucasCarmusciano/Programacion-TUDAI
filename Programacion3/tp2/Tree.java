@@ -1,6 +1,5 @@
 package Programacion3.tp2;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class Tree {

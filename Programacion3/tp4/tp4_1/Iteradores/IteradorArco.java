@@ -1,9 +1,8 @@
-package Parte1.Iteradores;
+package Programacion3.tp4.tp4_1.Iteradores;
 
 import java.util.Iterator;
 
-import Parte1.Arco;
-import Parte1.Grafo;
+import Programacion3.tp4.tp4_1.*;
 
 public class IteradorArco<T> implements Iterator<Arco<T>>{
 
@@ -12,11 +11,11 @@ public class IteradorArco<T> implements Iterator<Arco<T>>{
     private Iterator<Arco<T>> arcos;
     private Grafo<T> grafo;
 
-    public IteradorArco(Grafo<T> grafo){
-        this.grafo=grafo;
-        this.vertices = grafo.obtenerVertices();
+    public IteradorArco(GrafoDirigido<T> grafoDirigido){
+        this.grafo=grafoDirigido;
+        this.vertices = grafoDirigido.obtenerVertices();
         this.verticeActual = vertices.next();
-        this.arcos=grafo.obtenerArcos(verticeActual);
+        this.arcos=grafoDirigido.obtenerArcos(verticeActual);
     }
 
     @Override

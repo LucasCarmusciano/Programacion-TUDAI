@@ -10,7 +10,9 @@ public class ServicioCaminos {
 	private int origen;
 	private int destino;
 	private int lim;
-    private HashMap<Integer, String> map;
+    private HashMap<Arco<?>, String> map;
+    private List<List<Integer>> salida;
+    private List<Integer> camino;
 	
 	// Servicio caminos
 	public ServicioCaminos(Grafo<?> grafo, int origen, int destino, int lim) {
@@ -18,38 +20,40 @@ public class ServicioCaminos {
 		this.origen = origen;
 		this.destino = destino;
 		this.lim = lim;
-        this.map= new HashMap<>();
+        this.map = new HashMap<>();
+        this.salida = new LinkedList<>();
+        this.camino = new LinkedList<>();
 	}
 
 	public List<List<Integer>> caminos() {
-		List<List<Integer>> salida = new LinkedList<>();
-        List<Integer> camino = new LinkedList<>();
-        camino.add(origen);
-        Iterator<Integer> adj = grafo.obtenerAdyacentes(origen);
-        while(adj.hasNext()){
-            int actual = adj.next();
-            List<Integer> copia = new LinkedList<>(camino);
-            copia.add(actual);
-            caminos(actual, copia, salida, this.lim);
+        Iterator<?> arcos = grafo.obtenerArcos();
+        while(arcos.hasNext()){
+            map.put((Arco<?>) arcos.next(), "NO_VISITED");
         }
+        caminos(origen, lim, null);
 		return salida;
 	}
-    
-    private void caminos(int v, List<Integer> camino, List<List<Integer>> salida, int cont){
-        if(cont > 0){
-            if(v == this.destino){
-                salida.add(camino);
+
+    private void caminos(Integer v, int limite, Arco<?> arcoActual){
+        camino.add(v);
+        if(arcoActual!=null)
+            map.put(arcoActual, "VISITED");
+        if(limite>=0){ 
+            if(v.equals(destino)){
+                salida.add(new LinkedList<>(camino));
             }else{
-                Iterator<Integer> adj = grafo.obtenerAdyacentes(v);
-                while(adj.hasNext()){
-                    int actual = adj.next();
-                    List<Integer> copia = new LinkedList<>(camino);
-                    if(!camino.contains(actual)){ // SI COMENTO, PUEDO AGREGAR [2,4,1,2,5] PERO NO AGREGA [2,5]
-                        copia.add(actual);
-                        caminos(actual, copia, salida, cont-1);
-                    }
+                Iterator<Integer> vertices = grafo.obtenerAdyacentes(v);
+                while(vertices.hasNext()){
+                    int vertice = vertices.next();
+                    Arco<?>arco = grafo.obtenerArco(v, vertice);
+                    if(map.get(arco)=="NO_VISITED") 
+                        caminos(vertice, limite-1, arco); 
                 }
             }
         }
+        if(arcoActual!=null)
+            map.put(arcoActual, "NO_VISITED");
+        camino.remove(camino.size()-1);
+        
     }
 }
