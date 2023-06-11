@@ -1,6 +1,5 @@
 package Programacion3.tp4.tp4_2;
 
-import java.rmi.Remote;
 import java.util.LinkedList;
 import java.util.List;
 
