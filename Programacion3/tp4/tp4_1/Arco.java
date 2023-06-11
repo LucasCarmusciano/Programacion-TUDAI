@@ -45,6 +45,7 @@ public class Arco<T> {
             return false;
         if (getClass() != obj.getClass())
             return false;
+        @SuppressWarnings("rawtypes")
         Arco other = (Arco) obj;
         if (verticeOrigen != other.verticeOrigen)
             return false;
